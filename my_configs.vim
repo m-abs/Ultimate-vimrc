@@ -1,13 +1,11 @@
 colorscheme peachpuff
 
-set smartindent
-set tabstop=2
-set shiftwidth=2
-set noexpandtab
-
 set listchars=tab:·\ ,trail:·
 set list
 
 set number
 
-:autocmd BufReadPost * :DetectIndent 
+au FileType javascript setl foldlevel=3
+:let g:detectindent_preferred_expandtab = 1
+:let g:detectindent_preferred_indent = 2
+:autocmd BufReadPost * :DetectIndent

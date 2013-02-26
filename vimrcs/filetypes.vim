@@ -35,6 +35,7 @@ au FileType javascript inoremap <buffer> $f //--- PH ---------------------------
 function! JavaScriptFold() 
     setl foldmethod=syntax
     setl foldlevelstart=1
+    setl foldlevel=3
     syn region foldBraces start=/{/ end=/}/ transparent fold keepend extend
 
     function! FoldText()
