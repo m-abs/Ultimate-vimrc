@@ -33,15 +33,17 @@ au FileType javascript inoremap <buffer> $r return
 au FileType javascript inoremap <buffer> $f //--- PH ----------------------------------------------<esc>FP2xi
 
 function! JavaScriptFold() 
-    setl foldmethod=syntax
-    setl foldlevelstart=1
-    setl foldlevel=3
-    syn region foldBraces start=/{/ end=/}/ transparent fold keepend extend
+    if has( "folding" )
+        setl foldmethod=syntax
+        setl foldlevelstart=1
+        setl foldlevel=3
+        syn region foldBraces start=/{/ end=/}/ transparent fold keepend extend
 
-    function! FoldText()
-        return substitute(getline(v:foldstart), '{.*', '{...}', '')
-    endfunction
-    setl foldtext=FoldText()
+        function! FoldText()
+            return substitute(getline(v:foldstart), '{.*', '{...}', '')
+        endfunction
+        setl foldtext=FoldText()
+    endif
 endfunction
 
 
@@ -49,7 +51,9 @@ endfunction
 " => CoffeeScript section
 """""""""""""""""""""""""""""""
 function! CoffeeScriptFold()
-    setl foldmethod=indent
-    setl foldlevelstart=1
+    if has( "folding" )
+        setl foldmethod=indent
+        setl foldlevelstart=1
+    endif
 endfunction
 au FileType coffee call CoffeeScriptFold()

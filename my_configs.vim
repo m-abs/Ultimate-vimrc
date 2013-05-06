@@ -5,9 +5,19 @@ set list
 
 set number
 
-au FileType javascript setl foldlevel=3
-:let g:detectindent_preferred_expandtab = 1
-:let g:detectindent_preferred_indent = 2
-:autocmd BufReadPost * :DetectIndent
+if has("folding")
+  au FileType javascript setl foldlevel=3
+endif
+
+let g:detectindent_preferred_expandtab = 1
+let g:detectindent_preferred_indent = 2
+autocmd BufReadPost * :DetectIndent
 
 au BufRead,BufNewFile *.scss set filetype=scss
+autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
+
