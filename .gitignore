@@ -1,3 +1,4 @@
 temp_dirs/*
 sources_non_forked/*/doc/tags
 sources_forked/*/doc/tags
+.netrwhist
