@@ -6,7 +6,7 @@ set list
 set number
 
 if has("folding")
-  au FileType javascript setl foldlevel=3
+  au FileType javascript setl foldlevel=4
 endif
 
 let g:detectindent_preferred_expandtab = 1
@@ -20,4 +20,3 @@ autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
-
