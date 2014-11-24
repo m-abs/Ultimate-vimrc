@@ -10,3 +10,6 @@
 [submodule "sources_non_forked/jshint.vim"]
 	path = sources_non_forked/jshint.vim
 	url = git://github.com/wookiehangover/jshint.vim.git
+[submodule "sources_non_forked/syntastic"]
+	path = sources_non_forked/syntastic
+	url = git@github.com:scrooloose/syntastic.git

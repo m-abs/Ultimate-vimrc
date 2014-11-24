@@ -85,3 +85,9 @@ map <leader>nf :NERDTreeFind<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 vmap Si S(i_<esc>f)
 au FileType mako vmap Si S"i${ _(<esc>2f"a) }<esc>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Enable syntastic
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_javascript_checkers = ['jscs', 'jshint']
